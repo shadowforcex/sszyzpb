@@ -1,0 +1,44 @@
+<svg viewBox="0 0 680 780" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>现状流程图（含菱形判断节点）：志愿者排班与交接</title>
+<desc>七步人工链路，两个菱形判断：是否重复排点或不一致；复核口径是否明确——后者无答案导致无法闭环</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+<text class="th" x="40" y="28" fill="var(--color-text-primary)">现状流程：人工排班 + 群消息交接（菱形 = 现场实际要做的判断）</text>
+<g><rect x="100" y="44" width="300" height="48" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/><text class="th" x="250" y="60" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">1. 编制排班表</text><text class="ts" x="250" y="78" text-anchor="middle" dominant-baseline="central">人工维护，静态版本</text></g>
+<path class="arr" d="M250 92 L250 116" fill="none" marker-end="url(#arrow)"/>
+<g><rect x="100" y="118" width="300" height="48" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/><text class="th" x="250" y="134" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">2. 志愿者临时缺勤</text><text class="ts" x="250" y="152" text-anchor="middle" dominant-baseline="central">突发，无标准登记</text></g>
+<path class="arr" d="M250 166 L250 190" fill="none" marker-end="url(#arrow)"/>
+<g><rect x="100" y="192" width="300" height="48" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/><text class="th" x="250" y="208" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">3. 群消息通报人员变化</text><text class="ts" x="250" y="226" text-anchor="middle" dominant-baseline="central">排班表不随之更新</text></g>
+<g><rect x="430" y="192" width="210" height="48" rx="8" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/><text class="ts" x="535" y="208" text-anchor="middle" dominant-baseline="central" fill="#791F1F">F-3 缺岗不进排班表</text><text class="ts" x="535" y="226" text-anchor="middle" dominant-baseline="central" fill="#791F1F">F-4 异常节点无单独记录</text></g>
+<path class="leader" d="M400 216 L430 216"/>
+<path class="arr" d="M250 240 L250 264" fill="none" marker-end="url(#arrow)"/>
+<g><rect x="100" y="266" width="300" height="48" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/><text class="th" x="250" y="282" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">4. 人工协调替补上岗</text><text class="ts" x="250" y="300" text-anchor="middle" dominant-baseline="central">凭记忆 / 群聊拼信息</text></g>
+<g><rect x="430" y="266" width="210" height="48" rx="8" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/><text class="ts" x="535" y="282" text-anchor="middle" dominant-baseline="central" fill="#791F1F">F-1 替补重复排至</text><text class="ts" x="535" y="300" text-anchor="middle" dominant-baseline="central" fill="#791F1F">两个点位，无前置检测</text></g>
+<path class="leader" d="M400 290 L430 290"/>
+<path class="arr" d="M250 314 L250 338" fill="none" marker-end="url(#arrow)"/>
+<polygon points="250,340 392,385 250,430 108,385" fill="#FAEEDA" stroke="#BA7517" stroke-width="1"/>
+<text class="th" x="250" y="378" text-anchor="middle" dominant-baseline="central" fill="#633806">判断① 是否重复排点 /</text>
+<text class="th" x="250" y="396" text-anchor="middle" dominant-baseline="central" fill="#633806">两处记录不一致？</text>
+<g><rect x="430" y="361" width="210" height="48" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/><text class="ts" x="535" y="377" text-anchor="middle" dominant-baseline="central" fill="#444441">否：无冲突，</text><text class="ts" x="535" y="395" text-anchor="middle" dominant-baseline="central" fill="#444441">班次照常继续</text></g>
+<path class="arr" d="M392 385 L430 385" fill="none" marker-end="url(#arrow)"/>
+<text class="ts" x="408" y="376" fill="#3B6D11">否</text>
+<path class="arr" d="M250 430 L250 456" fill="none" marker-end="url(#arrow)"/>
+<text class="ts" x="262" y="446" fill="#A32D2D">是（实际频发）</text>
+<g><rect x="100" y="458" width="300" height="48" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/><text class="th" x="250" y="474" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">5. 回翻排班表原始版本</text><text class="ts" x="250" y="492" text-anchor="middle" dominant-baseline="central">人工比对，判责任归属</text></g>
+<g><rect x="430" y="458" width="210" height="48" rx="8" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/><text class="ts" x="535" y="474" text-anchor="middle" dominant-baseline="central" fill="#791F1F">F-2 需追到版本源头</text><text class="ts" x="535" y="492" text-anchor="middle" dominant-baseline="central" fill="#791F1F">复核耗时 / 返工 = 待测</text></g>
+<path class="leader" d="M400 482 L430 482"/>
+<path class="arr" d="M250 506 L250 530" fill="none" marker-end="url(#arrow)"/>
+<polygon points="250,532 392,577 250,622 108,577" fill="#FAEEDA" stroke="#BA7517" stroke-width="1"/>
+<text class="th" x="250" y="570" text-anchor="middle" dominant-baseline="central" fill="#633806">判断② 复核口径</text>
+<text class="th" x="250" y="588" text-anchor="middle" dominant-baseline="central" fill="#633806">是否明确？</text>
+<g><rect x="430" y="553" width="210" height="48" rx="8" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/><text class="ts" x="535" y="569" text-anchor="middle" dominant-baseline="central" fill="#791F1F">无既定规则：现场初判</text><text class="ts" x="535" y="587" text-anchor="middle" dominant-baseline="central" fill="#791F1F">还是走审核？口径悬置</text></g>
+<path class="arr" d="M392 577 L430 577" fill="none" marker-end="url(#arrow)"/>
+<text class="ts" x="410" y="568" fill="#A32D2D">否</text>
+<path class="arr" d="M250 622 L250 648" fill="none" marker-end="url(#arrow)"/>
+<text class="ts" x="262" y="640" fill="#633806">是（个别情形）</text>
+<g><rect x="100" y="650" width="300" height="48" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/><text class="th" x="250" y="666" text-anchor="middle" dominant-baseline="central" fill="#633806">6. 结论：班次内无法稳定闭环</text><text class="ts" x="250" y="684" text-anchor="middle" dominant-baseline="central" fill="#633806">量化指标 0 项（时效/返工/复核成本）</text></g>
+<text class="ts" x="40" y="736">证据：dlg-sports-volunteers-f10 / f11（林亦舟单方陈述）；判断②两分支均未定型 → 基准线第五节悬置问题</text>
+</svg>
